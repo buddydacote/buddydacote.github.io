@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="fb-root"></div>
+<script>
+	var APP_ID="345223892351586";
+
+	window.fbAsyncInit = initFacebook;
+	
+	function initFacebook()
+	{
+		FB.init({
+		  appId  : APP_ID,
+		  status : true, // check login status
+		  cookie : false, // enable cookies to allow the server to access the session
+		  xfbml  : true  // parse XFBML
+		});
+
+		FB.getLoginStatus(onFacebookLoginStatus);
+	};
+
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+		}());
+
+
+	
+	function facebookLogout()
+	{
+		FB.logout();
+		var loginButtonDiv=document.getElementById("fb-login-button-div");
+		loginButtonDiv.style.display="block";	
+		var logoutButtonDiv=document.getElementById("fb-logout-button-div");
+		logoutButtonDiv.style.display="none";	
+		var contentDiv=document.getElementById("user-is-authenticated-div");
+		contentDiv.style.display="none";			
+	}
+
+	function facebookLogin()
+	{
+		var loginUrl="http://www.facebook.com/dialog/oauth/?"+
+			"scope=publish_stream&"+
+			"client_id="+APP_ID+"&"+
+			"redirect_uri="+document.location.href+"&"+
+			"response_type=token";		
+		window.location=loginUrl;
+	}
+
+	/*
+	* Callback function for FB.login
+	*/
+	function onFacebookLoginStatus(response)
+	{
+		if (response.status=="connected" && response.authResponse)
+		{
+			var loginButtonDiv=document.getElementById("fb-login-button-div");
+			loginButtonDiv.style.display="none";
+			var logoutButtonDiv=document.getElementById("fb-logout-button-div");
+			logoutButtonDiv.style.display="block";
+			var contentDiv=document.getElementById("user-is-authenticated-div");
+			contentDiv.style.display="block";
+
+		}
+		else
+		{
+			var loginButtonDiv=document.getElementById("fb-login-button-div");
+			loginButtonDiv.style.display="block";	
+			var contentDiv=document.getElementById("user-is-authenticated-div");
+			contentDiv.style.display="none";			
+		}
+
+	}  
+	
+
+
+
+
+
+
+
+
+
+
+	
+	
+	function postToWallUsingFBApi()
+	{
+		var data=
+		{
+			message: "Come sono i pelosetti in cerca di casa a #Novara? ",
+			picture: "http://petsnovaraedintorni.altervista.org/immagini/enpa-rocky.jpg",    
+			link: "http://petsnovaraedintorni.altervista.org/html/enpa-rocky.html",
+		}
+		//console.log(data);    
+		FB.api('/me/feed', 'post', data, onPostToWallCompleted);
+	}
+
+
+
+
+
+	function postToWallUsingFBApi1()
+	{
+		var data=
+		{
+			message: "Come sono i pelosetti in cerca di casa a #Novara?",
+			picture: "http://petsnovaraedintorni.altervista.org/immagini/enpa-mina.jpg",    
+			link: "http://petsnovaraedintorni.altervista.org/html/enpa-mina.html",
+		}
+		//console.log(data);    
+		FB.api('/me/feed', 'post', data, onPostToWallCompleted);
+	}
+
+
+	
+
+	function postToWallUsingFBApi2()
+	{
+		var data=
+		{
+			message: "Come sono i pelosetti in cerca di casa a #Novara?",
+			picture: "http://petsnovaraedintorni.altervista.org/immagini/enpa-spike.jpg",    
+			link: "http://petsnovaraedintorni.altervista.org/html/enpa-spike.html",
+		}
+		//console.log(data);    
+		FB.api('/me/feed', 'post', data, onPostToWallCompleted);
+	}
+
+	
+
+
+
+		function postToWallUsingFBApi3()
+	{
+		var data=
+		{
+			message: "Come sono i pelosetti in cerca di casa a #Novara?",
+			picture: "http://petsnovaraedintorni.altervista.org/immagini/enpa-bianchina.jpg",    
+			link: "http://petsnovaraedintorni.altervista.org/html/enpa-bianchina.html",
+		}
+		//console.log(data);    
+		FB.api('/me/feed', 'post', data, onPostToWallCompleted);
+	}
+
+
+
+		function postToWallUsingFBApi4()
+	{
+		var data=
+		{
+			message: "Come sono i pelosetti in cerca di casa a #Novara?",
+			picture: "http://petsnovaraedintorni.altervista.org/immagini/enpa-nerina.jpg",    
+			link: "http://petsnovaraedintorni.altervista.org/html/enpa-nerina.html",
+		}
+		//console.log(data);    
+		FB.api('/me/feed', 'post', data, onPostToWallCompleted);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	function onPostToWallCompleted(response)
+	{
+		if (response)
+		{
+			//console.log(response);
+			if (response.error)
+			{
+				alert(response.error.message);
+			}
+			else
+			{
+				if (response.id)
+					alert("Posted as post_id "+response.id);						
+				else if (response.post_id)
+					alert("Posted as post_id "+response.post_id);
+				else
+					alert("Unknown Error");
+			}
+		}
+		// user cancelled
+	}
+	
+
+	
+</script>
+<div id="fb-login-button-div" style="display:none;">
+	Please login to enjoy all the features of this application:
+	<input id="loginButton" type="button" value="Login To Facebook" onclick="javascript:facebookLogin();">
+</div>
+<div id="fb-logout-button-div" style="display:none;">
+	<input id="logoutButton" type="button" value="Logout From Facebook" onclick="javascript:facebookLogout();">
+</div>
+
+<div id="user-is-authenticated-div" style="display:none;">
+	<input id="postPictureToWall" type="button" value="Post To Wall Using FB.api" onclick="javascript:postToWallUsingFBApi();postToWallUsingFBApi1();postToWallUsingFBApi2();postToWallUsingFBApi3();postToWallUsingFBApi4();">
+</div>
+</body>
+</html>
