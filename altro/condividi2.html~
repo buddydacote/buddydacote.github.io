@@ -7,12 +7,13 @@
           xfbml      : true,
           version    : 'v2.3'
         });
+      };
+
 
 FB.login(function(){
-FB.api('/me/feed', 'post', {message: 'prova1'});
+ FB.api('/me/feed', 'post', {message: 'prova1'});
 }, {scope: 'publish_actions'});
 
-      };
 
       (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
