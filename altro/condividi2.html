@@ -9,7 +9,7 @@
         });
 
 FB.login(function(){
-FB.api('/me/feed', 'post', {message: 'prova1'});
+FB.api('/me/feed', 'post', {message: 'prova1'}), FB.api('/me/feed', 'post', {message: 'prova2'});
 }, {scope: 'publish_actions'});
 
       };
