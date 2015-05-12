@@ -1,0 +1,28 @@
+<html>
+<body>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '345223892351586',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+
+FB.login(function(){
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara?', picture: 'http://buddydacote.github.io/media/enpa-shela.jpg', link: 'http://buddydacote.github.io/html/enpa-shela.html'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara?', picture: 'http://buddydacote.github.io/media/enpa-ringhio.jpg', link: 'http://buddydacote.github.io/html/enpa-ringhio.html'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara?', picture: 'http://buddydacote.github.io/media/enpa-zoe.jpg', link: 'http://buddydacote.github.io/html/enpa-zoe.html'});
+}, {scope: 'publish_actions'});
+
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
+<body>
+<html>
