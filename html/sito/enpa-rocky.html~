@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Language" content="English" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
 </head>
 <body>
 
@@ -26,17 +27,6 @@ ENPA Novara. Indirizzo: via del Gazzurlo, 57, 28100, Novara. Telefono: 0321/4581
 <br /><br />
 <img src="http://buddydacote.github.io/media/enpa-rocky.jpg" />
 <br /><br />
-</div>
-<h2><a href="#">Mina</a></h2>
-<div class="articles">
-ENPA Novara. Indirizzo: via del Gazzurlo, 57, 28100, Novara. Telefono: 0321/458149
-<br /><br />
-<img src="http://buddydacote.github.io/media/enpa-mina.jpg" />
-<br /><br />
-</div>
-<h2><a href="#">Pippo</a></h2>
-<div class="articles">
-ENPA Novara. Indirizzo: via del Gazzurlo, 57, 28100, Novara. Telefono: 0321/458149.
 </div>
 </div>
 <div class="right"> 
