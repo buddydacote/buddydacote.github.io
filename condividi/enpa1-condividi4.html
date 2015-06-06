@@ -1,0 +1,31 @@
+<html>
+<body>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '345223892351586',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+
+FB.login(function(){
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/amici.enpanovara/photos/a.1417013705255391.1073741830.1416998721923556/1496403680649726/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/amici.enpanovara/photos/a.1417014351921993.1073741831.1416998721923556/1417015031921925/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/amici.enpanovara/photos/a.1417014351921993.1073741831.1416998721923556/1417015045255257/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/amici.enpanovara/photos/a.1417014351921993.1073741831.1416998721923556/1417015055255256/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/amici.enpanovara/photos/a.1417014351921993.1073741831.1416998721923556/1417015115255250/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/amici.enpanovara/photos/a.1417014351921993.1073741831.1416998721923556/1417015128588582/'})
+}, {scope: 'publish_actions'});
+
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
+<body>
+<html>
