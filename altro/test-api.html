@@ -1,24 +1,48 @@
 <html>
 <body>
-<script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '345223892351586',
-          xfbml      : true,
-          version    : 'v2.3'
-        });
-
-FB.login (function () { FB.api('/me/taggable_friends') }, {scope: 'publish_actions'});
-
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    FB.init({
+        appId   : '345223892351586',
+        xfbml   : true,
+        version : 'v2.0',
+        status  : true,
+        cookie  : true,
+        oauth   : true
+    });2
+};
+ 
+function btnClick() {
+    FB.login(function (response) {
+        if (response.authResponse) {
+            var body = 'Reading JS SDK documentation';
+ 
+            FB.api('/me/taggable_friends?fields=name', function(response) {
+                if (!response || response.error) {
+                    var read_err_text = 'Error';
+                    $("#read_result").text(read_err_text);
+                } else {
+                    var read_ok_text = jsonParser(response);
+                    $("#read_result").html(read_ok_text);
+                }
+            });
+ 
+        } else {
+            alert('User is logged out');
+        }
+    }, {scope: 'public_profile,user_friends'});
+};
+ 
+function jsonParser(response) {
+    var message = "";
+    var dataArray = response.data;
+    for(var count in dataArray){
+        message = message + dataArray[count].name;
+        message = message + '<br/>';
+    }
+    return message;
+};
+ 
 </script>
 <body>
 <html>
