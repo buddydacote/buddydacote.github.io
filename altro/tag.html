@@ -1,0 +1,97 @@
+<html>
+<body>
+<script>
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 345223892351586 , // App ID
+      version: 'v2.0',
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      oauth      : true, // enable OAuth 2.0
+      xfbml      : true  // parse XFBML
+    });
+
+
+
+
+
+
+
+
+
+function Login()
+    {
+
+        FB.login(function(response) {
+           if (response.authResponse) 
+           {
+                console.log(response.authResponse); // Get User Information.
+
+            } else
+            {
+             console.log('Authorization failed.');
+            }
+         },{scope: 'user_friends, publish_actions, status_update, read_stream, manage_friendlists'});// ' user_interests, user_likes, etc.. '
+
+    }
+
+
+var  var friendsIDarray = [];
+var user_friend_list;
+    function meTaggableFriends(){
+        FB.api(
+            "/me/taggable_friends",
+            function (response) {
+              if (response && !response.error) {
+                /* handle the result */
+                console.log(response)
+
+                    for(var i=0; i<response.data.length; i++){
+
+                        var data = response.data;
+                        friendsIDarray.push(data[i].id);    
+                    }
+                    user_friend_list = friendsIDarray.join();
+
+              }
+            }
+        );
+
+
+FB.api(
+                      'me/{namespace}:{action}',
+                      'post',
+                      {
+                         tags: user_friend_list, // the tokens ids for those friens you wanna tag and you got on previous step
+                         title: 'whatever',
+                         message: 'like this, you tag friends @['+ONE_TOKEN_ID_FROM_TAGGABLE_FRIENDS+'] , @['+ONE_TOKEN_ID_FROM_TAGGABLE_FRIENDS+'] etc'
+                      }, 
+                      function(response) {
+                        console.log(response)
+                      }
+                );
+
+
+
+
+
+
+
+
+
+
+  };
+
+
+
+    // Load the SDK Asynchronously
+      (function(d){
+         var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         d.getElementsByTagName('head')[0].appendChild(js);
+       }(document));
+    }
+</script>
+</body>
+</html>
