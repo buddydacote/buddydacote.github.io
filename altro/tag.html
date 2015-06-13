@@ -36,6 +36,7 @@ function Login()
     }
 
 
+
 var  var friendsIDarray = [];
 var user_friend_list;
     function meTaggableFriends(){
@@ -56,26 +57,6 @@ var user_friend_list;
               }
             }
         );
-
-
-FB.api(
-                      'me/{namespace}:{action}',
-                      'post',
-                      {
-                         tags: user_friend_list, // the tokens ids for those friens you wanna tag and you got on previous step
-                         title: 'whatever',
-                         message: 'like this, you tag friends @['+ONE_TOKEN_ID_FROM_TAGGABLE_FRIENDS+'] , @['+ONE_TOKEN_ID_FROM_TAGGABLE_FRIENDS+'] etc'
-                      }, 
-                      function(response) {
-                        console.log(response)
-                      }
-                );
-
-
-
-
-
-
 
 
 

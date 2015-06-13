@@ -1,0 +1,40 @@
+<html>
+<body>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '345223892351586',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+
+FB.login(function(){
+              FB.api(
+            "/me/taggable_friends",
+            function (response) {
+              if (response && !response.error) {
+                /* handle the result */
+                console.log(response)
+
+                    for(var i=0; i<response.data.length; i++){
+
+                        var data = response.data;
+                        friendsIDarray.push(data[i].id);    
+                    }
+                    user_friend_list = friendsIDarray.join();
+
+              }
+            }, {scope: 'user_friends, publish_actions, status_update, read_stream, manage_friendlists'});
+
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
+<body>
+<html>
