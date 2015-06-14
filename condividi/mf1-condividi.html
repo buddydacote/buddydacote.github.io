@@ -1,0 +1,30 @@
+<html>
+<body>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '345223892351586',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+
+FB.login(function(){
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/AssociazioneProgettoMiaoFidoOnlus/photos/a.357085857730396.1073741825.241307662641550/357087611063554/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/AssociazioneProgettoMiaoFidoOnlus/photos/a.357085857730396.1073741825.241307662641550/357087221063593/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/AssociazioneProgettoMiaoFidoOnlus/photos/a.357085857730396.1073741825.241307662641550/361857700586545/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/AssociazioneProgettoMiaoFidoOnlus/photos/a.357085857730396.1073741825.241307662641550/370125609759754/'}),
+      FB.api('/me/feed', 'post', {message: 'Come sono i pelosetti in cerca di casa a #Novara? Aiutali condividendo', link: 'https://www.facebook.com/AssociazioneProgettoMiaoFidoOnlus/photos/a.357085857730396.1073741825.241307662641550/366717410100574/'})
+}, {scope: 'publish_actions'});
+
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
+<body>
+<html>
