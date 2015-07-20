@@ -1,48 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Blog</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Blog</title>
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
 </head>
 <body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<div class="container">
 <h1>Blog</h1>
+<br>  
 
 
-<h2>Aerodinamica e vortici</h2>
-<p>Ho condiviso su Facebook un brano dei Daft Punk dal nome Aerodynamic. In un battibaleno sono su Google a cercare qualche programma per fare simulazioni aerodinamiche. Approdo su un sito che non offre il tasto «Scarica», ma una serie di passaggi da eseguire in un documento Ipython che richiede come uniche dipendenze Numpy e Matplotlib. Ed ecco un vortice!</p>
-<p>Fonte: http://nbviewer.ipython.org/github/barbagroup/AeroPython/blob/master/lessons/04_Lesson04_vortex.ipynb</p>
+
+
+<h2>L'applicazione</h2>
+<p>Mostra solo una schermata con un solo locale.</p>
 <br>
 
+<h2>A Nichelino (Torino) il primo Consiglio Comunale “animal friendly”</h2>
+<p>Si chiama Tito, è un bellissimo esemplare di boxer e può vantare un piccolo-grande primato: è il primo quattro zampe a poter sedere, o meglio accucciarsi, tra i banchi del Consiglio Comunale. Accade a Nichelino, Comune piemontese di 50 mila abitanti alle porte del capoluogo regionale, dove il capogruppo dei Comunisti Italiani, Fiodor Verzola, che con Tito convive da sei anni, è stato il promotore di una svolta “animal friendly”; svolta voluta e sostenuta dal sindaco Angelino Riggio con una recente ordinanza che apre uffici e mezzi pubblici di Nichelino anche ai “migliori amici dell’uomo”. Fino ad oggi, però, nessun “peloso” aveva ancora avuto l’opportunità di presenziare ad una riunione dell’Assemblea. «Portare un cane in Consiglio Comunale non rappresenta solo un segnale si svolta – ha dichiarato Verzola al quotidiano La Stampa – ma fa bene sia ai proprietari che agli umani. Anziché lasciare il nostro amico a casa per altre ore dopo il lavoro, portandolo insieme a noi alleggeriamo e rendiamo meno stressante la solitudine degli animali». Ma in questa storia c’è anche un altro aspetto degno di menzione e di plauso. Infatti, benché sia oggi un cane felice e sereno, Tito ha alle spalle un passato difficile; un passato segnato dai traffico clandestino di animali. Tuttavia, a differenza di tanti altri cuccioli che spesso non sopravvivono ai viaggi lungo le tratte del commercio illegale, Tito è stato fortunato: il suo aguzzino è stato scoperto e arrestato e lui, il quattro zampe, affidato alle cure di Fiodor. Senza sapere che un giorno sarebbe stato il primo “peloso” ad accucciarsi tra i banchi di un Consiglio Comunale, vicino al proprio amico.</p>
+<br>
+<p>Fonte: http://www.enpaitalia.it/it/7911/cnt/buoni-esempi/a-nichelino-torino-il-primo-consiglio-comunale-ani.aspx</p>
+<br>
+
+<h2>Logica matematica in java</h2>
+<p>Le potenzialità della logica sono molte. Come valutare se più affermazioni sono vere velocemente?</p>
+<pre><code>package com.buddydacote;
+
+public class LogicaMatematica
+{
+ public static void main(String[] args)
+ {
+ int a = 11, b = 14;
+ boolean c = a > 10 && b < 15;
+ System.out.println(c);
+ }
+}</code></pre>
+<p>La riga da prendere in considerazione è la 8 ma anche la 7. Il resto è standard e serve per far andare il programmino che eseguito scriverà un bel true, cioè vero. Perché? Perché l’espressioni semplici che compongono quella complessiva sulla riga 8 sono entrambe vere. Ma facciamo un passo alla volta. Sulla riga 7 abbiamo detto che “a” vale 11 e “b” 14, nella riga 8 chiediamo al calcolatore di valutare se “a” è maggiore di 10 e attraverso un operatore logico AND, che abbiamo scritto come “&&”, chiediamo se anche la seconda espressione è vera. Dato che “b” vale 14 e quindo è minore di 15 l’espressione complessiva sarà vera, quindi il true di poco sopra.</p>
+<br>
+
+<h2>Mappe</h2>
+<p>Esistono diversi programmi per mappare la propria mente, ma uno dei miei preferiti è FreeMind scritto in java, il mio linguaggi preferito. Creare una mappa mentale diventa utile in molte occasione, soprattutto quando si devono gestire grandi mole di dati disordinati e si vuole mettere un po’ di ordine, FreeMind permette di aggiungere annotazioni, immagini, icone, collegamenti e chi più ne ha più ne metta. Quante volte vi capita di avere un’intuizione sul vostro progetto e solo per trovare un modo per annotarlo vi perdete? Io tante! Invece apro la mia mappa salvata il giorno precedente e aggiungo la mia nuova nota! E tutto è perfettamente procedurale, algoritmico!</p>
+<br>
+
+<h2>Non prendersi cura del proprio animale integra il “reato di abbandono”</h2>
+<p>A cura dell’avvocato Manuela Giacomini (Conte e Giacomini Avvocati). Il Tribunale di Trento con la sentenza numero 856/2014 ha stabilito che: “costituiscono comportamenti idonei ad integrare il reato di abbandono di animali ex art. 727 c.p., non solo le sevizie, le torture o le crudeltà caratterizzate da dolo, ma anche quei comportamenti colposi di abbandono e incuria che offendono la sensibilità psico – fisica degli ammali quali autonomi esseri viventi (…) Con la conseguenza che la carenza di cibo, la costrizione in ambienti ristretti e sporchi, senza possibilità di deambulare, possono costituire, nel loro insieme, comportamenti di vero maltrattamento”. Per tale motivo, il proprietario di un cane di razza pastore tedesco, per sua natura di grossa taglia e, di conseguenza, bisognoso di ampi spazi per potersi muovere, è stato condannato per il reato di abbandono di animali ex art. 727 c.p. Nel caso di specie, infatti, l’imputato costringeva il cane a vivere sul balcone della propria abitazione, in mezzo ai suoi escrementi e dovendo sopportare la pioggia e la neve poiché la tettoia soprastante era di modeste dimensioni. Di conseguenza, a causa del forte stress provocatogli da questa situazione, il cane si era anche ferito la zampa rompendo il vetro di una finestra nel tentativo di entrare in casa. Inoltre, l’animale veniva nutrito con del pane secco ogni due giorni e gli veniva dato da bere tramite un secchio che il più delle volte si rovesciava costringendolo quindi a dissetarsi con la sua urina. Tali condotte, a parere del giudice, rappresentative di come un cane non deve essere tenuto, integrano il reato di abbandono poiché questo si integra anche in caso di trascuratezza, disinteresse o mancanza di attenzione verso il proprio animale e non solo quando vi è una condotta di distacco volontario da esso. Nello specifico, il comma 2 dell’art 727 c.p. sanziona la condotta di “chiunque detiene animali in condizioni incompatibili con la loro natura, e produttive di gravi sofferenze”. Alla luce di ciò, appare quindi evidente che la condotta dell’imputato, totalmente indifferente ai bisogni più elementari del cane tanto da lasciarlo senza cibo e acqua per giorni e da non accorgersi della ferita alla zampa malgrado le macchie di sangue e il fatto che questo non deambulasse correttamente, non può non integrare la fattispecie di cui all’art. 727 c.p.
+Inoltre, sotto il profilo soggettivo, l’imputato si era dimostrato più volte disinteressato ai richiami dei vicini che gli avevano fatto notare le condizioni in cui il cane veniva tenuto visto che questo, a causa dello stato di abbandono e incuria in cui versava, abbaiava costantemente di giorno e di notte provocando disturbo. Il giudice ha così ravvisato l’ipotesi dolosa piuttosto che quella colposa quale elemento psicologico integrante il reato di abbandono poiché è sufficiente la semplice volontarietà del fatto.</p>
+<br>
+<p>Fonte: http://www.enpaitalia.it/it/7855/cnt/la-legge-per-gli-animali/non-prendersi-cura-del-proprio-animale-integra-il-.aspx</p>
+<br>
 
 <h2>Haiku</h2>
 <p>Lago,</p>
 <p>rispecchi il sole</p>
 <p>la luna e l’umanità.</p>
+<br>
 <p>Fonte: http://www.icmontanelli.it/files/haiku.pdf</p>
 <br>
 
-
 <h2>Fib</h2>
-<p>Una<p>
+<p>Una</p>
 <p>piccola,</p>
 <p>precisa,</p>
 <p>poetica,</p>
 <p>mescolanza spiraliforme:</p>
 <p>la matematica più la poesia dà il fib.</p>
+<br>
 <p>Fonte: http://www.fisicamente.net/SCI_SOC/index-1734.htm</p>
 <br>
 
-
 <h2>Giornata della Terra e Neil deGrasse Tyson</h2>
 <p>Ho trovato un articolo di Ingrid Newkirk e desidero riassumerlo, parla della Giornata della Terra: sempre più persone si considerano ambientaliste. Ma per salvaguardare l’ambiente, al posto di spendere soldi nelle rinnovabili, la cosa ideale è eliminare la carne e i latticini. Questo ci risparmierebbe anche il passaggio all’auto ibrida. La carne e i latticini non si limitano a inquinare, sono infatti anche inefficenti sotto il punto di vista idrico. Un altro articolo interessante è un’intervista al noto astrofisico e divulgatore scientifico Neil deGrasse Tyson. Parla di gentilezza e empatia verso i nostri amici animali e di possibili contatti con civiltà aliene! Vi lascio il collegamento qui sotto.</p>
+<br>
 <p>Fonte: http://www.huffingtonpost.com/ingrid-newkirk/earth-day-and-animal-products-dont-mix_b_7109156.html - http://www.peta.org/features/dr-neil-degrasse-tyson-interview</p>
+<br>
 
 
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+
+
+
+
+</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
