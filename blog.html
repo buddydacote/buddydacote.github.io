@@ -6,6 +6,12 @@
 <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="normalize.css">
 <link rel="stylesheet" href="skeleton.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </head>
 <body>
 <div class="container">
@@ -15,6 +21,30 @@
 
 <h1>Blog</h1>
 <br>  
+
+
+
+<a name="1815"></a>
+<h2>Pitagoriani in action</h2>
+<p>Proviamo a implementare il teorema di Pitagora; $ a^2 + b^2 = c^2 $ in java.</p>
+<pre><code>package com.buddydacote;
+ 
+public class Pitagora {
+ 
+   public static void main(String[] args) {
+       
+      double base = 10;
+      double altezza = 15;
+      double ipotenusa = Math.sqrt((base * base) + (altezza * altezza));
+      System.out.println(ipotenusa);
+    
+   }
+ 
+}</code></pre>
+
+<p>Come al solito le righe da prendere in considerazione sono solo alcune; la 7, la 8, la 9. Il resto è standard e serve per far funzionare il programmino. Allora nelle righe 7 e 8 indichiamo il valore di $ base $ e $ altezza $. La riga 9 trova il risulato di $ base^2 + altezza^2 $ moltiplicando per se stessa sia $ base $ che $ altezza $. Alla prossima!</p>
+<br>
+
 
 
 
