@@ -24,6 +24,42 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
 
 
 
+<a name="3815-1"></a>
+<h2>Una piramide di stelle in java</h2>
+<p>Proviamo a fare quanto segue insieme. Puntiamo verso <a href="http://www.tutorialspoint.com/compile_java_online.php">qui</a> e cancelliamo quanto scritto nella parte centrale per incollare:</p>
+<pre><code>public class HelloWorld
+{
+    public static void main(String args[])
+    {
+        int c = 1;
+        for (int i = 1; i <= 8; i++)
+        {
+            for (int j = i; j < 8; j++)
+            {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= c; k++)
+            {
+                if (k % 2 == 0)
+                    System.out.print(" ");
+                else
+                    System.out.print("*");
+            }
+            System.out.println();
+            c += 2;
+        }
+    }
+}</code></pre>
+<p>Premiamo il bottone Compile in alto, noteremo in basso delle scritte, è il compilatore in azione. Completata la compilazione premiamo il bottone Excute, sempre in alto. Buttate un sguardo in basso. Alla prossima!</p>
+<br>
+<p>Fonte: http://stackoverflow.com/a/25613722</p>
+<br>
+<br>
+
+
+
+
+
 <a name="3815"></a>
 <h2>La quarta ma anche la settima dimensione</h2>
 <p>Ho pubblicato su Facebook un po' di enigmi risolvibili con una quarta dimensione. Così mi sono messo a cercare qualcosa per provarla a rappresentare graficamente e mi sono imbattutto su un blog che metterva a disposizione del codice R per rappresentare ipercubi. Un ipercubo è una forma geometrica che aiuta a visulizzare dimennsioni che non riusciamo a percepire.</p>
