@@ -24,6 +24,97 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
 
 
 
+<a name="3815"></a>
+<h2>La quarta ma anche la settima dimensione</h2>
+<p>Ho pubblicato su Facebook un po' di enigmi risolvibili con una quarta dimensione. Così mi sono messo a cercare qualcosa per provarla a rappresentare graficamente e mi sono imbattutto su un blog che metterva a disposizione del codice R per rappresentare ipercubi. Un ipercubo è una forma geometrica che aiuta a visulizzare dimennsioni che non riusciamo a percepire.</p>
+<pre><code># hypercube.R
+# code to rotate arbitrary d-dimensional hypercubes
+
+# function definitions
+makevertices=function(d)
+{
+	numv=2^d
+	vertices=matrix(0,nrow=d,ncol=numv)
+	for (j in 1:numv) {
+		count=j-1
+		for (i in 1:d) {
+			vertices[i,j]=count%%2
+			count=count%/%2
+		}	
+	}
+	vertices
+}
+
+makeedges=function(vertices)
+{
+	d=dim(vertices)[1]
+	numv=dim(vertices)[2]
+	edges=NULL
+	for (j in 1:numv) {
+		for (i in j:numv) {
+			if (sum(abs((vertices[,i]-vertices[,j])))==1) {
+				edges=cbind(edges,c(i,j))
+			}
+		}
+	}
+	edges
+}
+
+rotate=function(vertices,angle=0.2)
+{
+	d=dim(vertices)[1]
+	axes=sort(sample(1:d,2))
+	rotmat=diag(rep(1,d))
+	rotmat[axes[1],axes[1]]=cos(angle)
+	rotmat[axes[2],axes[1]]=sin(angle)
+	rotmat[axes[1],axes[2]]=-sin(angle)
+	rotmat[axes[2],axes[2]]=cos(angle)
+	vertices=rotmat %*% vertices
+	vertices
+}
+
+plotcube=function(vertices,edges,col=2,lwd=2)
+{
+	d=dim(vertices)[1]
+	plot(NULL,xlim=c(-2,2),ylim=c(-2,2),main=paste(d,"-d hypercube",sep=""),xlab="x(1)",ylab="x(2)")
+	for (i in 1:dim(edges)[2]) {
+		lines(c(vertices[1,edges[1,i]],vertices[1,edges[2,i]]),c(vertices[2,edges[1,i]],vertices[2,edges[2,i]]),col=col,lwd=lwd)
+	}
+}
+
+rotationplot=function(vertices,edges,rotations=20,...)
+{
+	for (count in 1:rotations) {
+		vertices=rotate(vertices,...)
+		plotcube(vertices,edges)
+	}
+}
+
+hypercube=function(d=4,...)
+{
+	vertices=makevertices(d)
+	edges=makeedges(vertices)
+	vertices=2*vertices
+	vertices=vertices-1
+	rotationplot(vertices,edges,...)
+}
+
+# examples
+
+# hypercube()
+# hypercube(3)
+# hypercube(4,angle=0.1)
+# hypercube(5,rotations=30)
+
+# eof</code></pre>
+<br>
+<p>Fonte: https://darrenjw.wordpress.com/2009/11/18/hypercubes-in-r-getting-started-with-programming-in-r/</p>
+<br>
+<br>
+
+
+
+
 <a name="1815"></a>
 <h2>Pitagoriani in action</h2>
 <p>Proviamo a implementare il teorema di Pitagora; $ a^2 + b^2 = c^2 $ in java.</p>
