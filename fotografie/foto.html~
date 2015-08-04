@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foto</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<head>
+<body>
+
+<h1>Foto</h1>
+<br>
+
+<h2>Domenica 2 agosto 2015, acquario di Genova</h2>
+<div align="center">
+<img src="foto/2815genova.jpg" class="img-responsive">
+<img src="foto/2815genova-1.jpg" class="img-responsive">
+<img src="foto/2815genova-2.jpg" class="img-responsive">
+<img src="foto/2815genova-3.jpg" class="img-responsive">
+<img src="foto/2815genova-4.jpg" class="img-responsive">
+<img src="foto/2815genova-5.jpg" class="img-responsive">
+<img src="foto/2815genova-6.jpg" class="img-responsive">
+<img src="foto/2815genova-7.jpg" class="img-responsive">
+<img src="foto/2815genova-8.jpg" class="img-responsive">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
