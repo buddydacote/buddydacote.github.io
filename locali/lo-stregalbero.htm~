@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>Lo stregalbero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="skeleton.css">
+<meta property="og:title" content="Lo stregalbero"/>
+<meta property="og:description" content="Lo stregalbero. Indirizzo: via Gnifetti, 15. 28100, Novara."/>  
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://buddydacote.github.io/lostregalbero.html"/>
+<meta property="og:image" content="http://buddydacote.github.io/lostregalbero.png"/>
+</head>
+<body>
+<div class="container">
+
+
+
+
+<h1>Lo stregalbero</h1>
+<br>  
+<img class="u-max-full-width" src="lostregalbero.png">
+<p>Lo stregalbero. Indirizzo: via Gnifetti, 15. 28100, Novara.</p>
+
+
+
+
+</div>
+</body>
+</html>

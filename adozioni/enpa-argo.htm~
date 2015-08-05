@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Argo</title>
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Argo."/>
+<meta property="og:description" content="ENPA. Indirizzo: via del Gazzurlo, 57, 28100, Novara. Telefono: 0321/458149."/>  
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://buddydacote.github.io/enpa-argo.htm"/>
+<meta property="og:image" content="http://buddydacote.github.io/enpa-argo.jpg"/>
+
+</head>
+<body>
+
+<h1>Argo</h1>
+<br>  
+<img src="enpa-argo.jpg" class="img-responsive">
+<p>ENPA. Indirizzo: via del Gazzurlo, 57, 28100, Novara. Telefono: 0321/458149.</p>
+
+<script src="../bootstrap/js/jquery-1.11.3.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
