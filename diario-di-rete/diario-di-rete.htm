@@ -29,76 +29,6 @@
 <br>
 <br>
 
-<a name="4815-1"></a>
-<h2>Sfere il ritorno</h2>
-<p>Abbiamo parlato di sfere, così mi sono messo a cercare qualcosa di grafico. Oltre al Lisp ho una passione per Latex.</p>
-<pre>% Code by Author: Tomasz M. Trzeciak
-% Source: LaTeX-Community.org 
-% <http://www.latex-community.org/viewtopic.php?f=4&t=2111>
-\documentclass{article}
-\usepackage{tikz}
-\usetikzlibrary{calc,fadings,decorations.pathreplacing}
-
-\newcommand\pgfmathsinandcos[3]{%
-  \pgfmathsetmacro#1{sin(#3)}%
-  \pgfmathsetmacro#2{cos(#3)}%
-}
-\newcommand\LongitudePlane[3][current plane]{%
-  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
-  \pgfmathsinandcos\sint\cost{#3} % azimuth
-  \tikzset{#1/.estyle={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
-}
-\newcommand\LatitudePlane[3][current plane]{%
-  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
-  \pgfmathsinandcos\sint\cost{#3} % latitude
-  \pgfmathsetmacro\yshift{\cosEl*\sint}
-  \tikzset{#1/.estyle={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
-}
-\newcommand\DrawLongitudeCircle[2][1]{
-  \LongitudePlane{\angEl}{#2}
-  \tikzset{current plane/.prefix style={scale=#1}}
-   % angle of "visibility"
-  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
-  \draw[current plane] (\angVis:1) arc (\angVis:\angVis+180:1);
-  \draw[current plane,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
-}
-\newcommand\DrawLatitudeCircle[2][2]{
-  \LatitudePlane{\angEl}{#2}
-  \tikzset{current plane/.prefix style={scale=#1}}
-  \pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
-  % angle of "visibility"
-  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
-  \draw[current plane] (\angVis:1) arc (\angVis:-\angVis-180:1);
-  \draw[current plane,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
-}
-
-%% document-wide tikz options and styles
-
-\tikzset{%
-  >=latex, % option for nice arrows
-  inner sep=0pt,%
-  outer sep=2pt,%
-  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
-    fill=black,circle}%
-}
-
-\begin{document}
-
-\begin{tikzpicture} % "THE GLOBE" showcase
-\def\R{2.5} % sphere radius
-\def\angEl{35} % elevation angle
-\filldraw[ball color=white] (0,0) circle (\R);
-\foreach \t in {-80,-60,...,80} { \DrawLatitudeCircle[\R]{\t} }
-\foreach \t in {-5,-35,...,-175} { \DrawLongitudeCircle[\R]{\t} }
-\end{tikzpicture}
-
-\end{document}</pre>
-<br>
-<p>Fonte: http://tex.stackexchange.com/a/127239</p>
-<br>
-<br>
-
-
 <a name="4815"></a>
 <h2>Sfere</h2>
 <p>Un programmino Lisp per trovare l'area delle sfere conoscendone il raggio. Abbiamo implementato: $ 4 \cdot \pi \cdot r^2 $.</p>
@@ -107,136 +37,11 @@
 <br>
 <br>
 
-
-
-
-
-<a name="3815-1"></a>
-<h2>Una piramide di stelle in java</h2>
-<p>Proviamo a fare quanto segue insieme. Puntiamo verso <a href="http://www.tutorialspoint.com/compile_java_online.php">qui</a> e cancelliamo quanto scritto nella parte centrale per incollare:</p>
-<pre>public class HelloWorld
-{
-    public static void main(String args[])
-    {
-        int c = 1;
-        for (int i = 1; i <= 8; i++)
-        {
-            for (int j = i; j < 8; j++)
-            {
-                System.out.print(" ");
-            }
-            for (int k = 1; k <= c; k++)
-            {
-                if (k % 2 == 0)
-                    System.out.print(" ");
-                else
-                    System.out.print("*");
-            }
-            System.out.println();
-            c += 2;
-        }
-    }
-}</pre>
-<p>Premiamo il bottone Compile in alto, noteremo in basso delle scritte, è il compilatore in azione. Completata la compilazione premiamo il bottone Excute, sempre in alto. Buttate un sguardo in basso. Alla prossima!</p>
-<br>
-<p>Fonte: http://stackoverflow.com/a/25613722</p>
-<br>
-<br>
-
-
-
-
-
 <a name="3815"></a>
 <h2>La quarta ma anche la settima dimensione</h2>
-<p>Ho pubblicato su Facebook un po' di enigmi risolvibili con una quarta dimensione. Così mi sono messo a cercare qualcosa per provarla a rappresentare graficamente e mi sono imbattutto su un blog che metterva a disposizione del codice R per rappresentare ipercubi. Un ipercubo è una forma geometrica che aiuta a visulizzare dimennsioni che non riusciamo a percepire.</p>
-<pre><code># hypercube.R
-# code to rotate arbitrary d-dimensional hypercubes
-
-# function definitions
-makevertices=function(d)
-{
-	numv=2^d
-	vertices=matrix(0,nrow=d,ncol=numv)
-	for (j in 1:numv) {
-		count=j-1
-		for (i in 1:d) {
-			vertices[i,j]=count%%2
-			count=count%/%2
-		}	
-	}
-	vertices
-}
-
-makeedges=function(vertices)
-{
-	d=dim(vertices)[1]
-	numv=dim(vertices)[2]
-	edges=NULL
-	for (j in 1:numv) {
-		for (i in j:numv) {
-			if (sum(abs((vertices[,i]-vertices[,j])))==1) {
-				edges=cbind(edges,c(i,j))
-			}
-		}
-	}
-	edges
-}
-
-rotate=function(vertices,angle=0.2)
-{
-	d=dim(vertices)[1]
-	axes=sort(sample(1:d,2))
-	rotmat=diag(rep(1,d))
-	rotmat[axes[1],axes[1]]=cos(angle)
-	rotmat[axes[2],axes[1]]=sin(angle)
-	rotmat[axes[1],axes[2]]=-sin(angle)
-	rotmat[axes[2],axes[2]]=cos(angle)
-	vertices=rotmat %*% vertices
-	vertices
-}
-
-plotcube=function(vertices,edges,col=2,lwd=2)
-{
-	d=dim(vertices)[1]
-	plot(NULL,xlim=c(-2,2),ylim=c(-2,2),main=paste(d,"-d hypercube",sep=""),xlab="x(1)",ylab="x(2)")
-	for (i in 1:dim(edges)[2]) {
-		lines(c(vertices[1,edges[1,i]],vertices[1,edges[2,i]]),c(vertices[2,edges[1,i]],vertices[2,edges[2,i]]),col=col,lwd=lwd)
-	}
-}
-
-rotationplot=function(vertices,edges,rotations=20,...)
-{
-	for (count in 1:rotations) {
-		vertices=rotate(vertices,...)
-		plotcube(vertices,edges)
-	}
-}
-
-hypercube=function(d=4,...)
-{
-	vertices=makevertices(d)
-	edges=makeedges(vertices)
-	vertices=2*vertices
-	vertices=vertices-1
-	rotationplot(vertices,edges,...)
-}
-
-# examples
-
-# hypercube()
-# hypercube(3)
-# hypercube(4,angle=0.1)
-# hypercube(5,rotations=30)
-
-# eof</code></pre>
-<br>
-<p>Fonte: https://darrenjw.wordpress.com/2009/11/18/hypercubes-in-r-getting-started-with-programming-in-r/</p>
+<p>Ho pubblicato su Facebook un po' di enigmi risolvibili con una quarta dimensione. Così mi sono messo a cercare qualcosa per provarla a rappresentare graficamente e mi sono imbattutto su un <a href="https://darrenjw.wordpress.com/2009/11/18/hypercubes-in-r-getting-started-with-programming-in-r/">blog</a> che metterva a disposizione del codice R per rappresentare ipercubi. Un ipercubo è una forma geometrica che aiuta a visulizzare dimennsioni che non riusciamo a percepire.</p>
 <br>
 <br>
-
-
-
 
 <a name="1815"></a>
 <h2>Pitagoriani in action</h2>
@@ -255,12 +60,8 @@ public class Pitagora {
    }
  
 }</code></pre>
-
 <p>Come al solito le righe da prendere in considerazione sono solo alcune; la 7, la 8, la 9. Il resto è standard e serve per far funzionare il programmino. Allora nelle righe 7 e 8 indichiamo il valore di $ base $ e $ altezza $. La riga 9 trova il risulato di $ base^2 + altezza^2 $ moltiplicando per se stessa sia $ base $ che $ altezza $. Alla prossima!</p>
 <br>
-
-
-
 
 <a name="29715-8"></a>
 <h2>Lisp</h2>
@@ -284,23 +85,12 @@ public class Pitagora {
 <p>Alla prossima!</p>
 <br>
 
-
-
-<a name="29715-7"></a>
-<h2>L'applicazione</h2>
-<p>Mostra solo una schermata con un solo locale.</p>
-<br>
-
-
-
 <a name="29715-6"></a>
 <h2>A Nichelino (Torino) il primo Consiglio Comunale “animal friendly”</h2>
 <p>Si chiama Tito, è un bellissimo esemplare di boxer e può vantare un piccolo-grande primato: è il primo quattro zampe a poter sedere, o meglio accucciarsi, tra i banchi del Consiglio Comunale. Accade a Nichelino, Comune piemontese di 50 mila abitanti alle porte del capoluogo regionale, dove il capogruppo dei Comunisti Italiani, Fiodor Verzola, che con Tito convive da sei anni, è stato il promotore di una svolta “animal friendly”; svolta voluta e sostenuta dal sindaco Angelino Riggio con una recente ordinanza che apre uffici e mezzi pubblici di Nichelino anche ai “migliori amici dell’uomo”. Fino ad oggi, però, nessun “peloso” aveva ancora avuto l’opportunità di presenziare ad una riunione dell’Assemblea. «Portare un cane in Consiglio Comunale non rappresenta solo un segnale si svolta – ha dichiarato Verzola al quotidiano La Stampa – ma fa bene sia ai proprietari che agli umani. Anziché lasciare il nostro amico a casa per altre ore dopo il lavoro, portandolo insieme a noi alleggeriamo e rendiamo meno stressante la solitudine degli animali». Ma in questa storia c’è anche un altro aspetto degno di menzione e di plauso. Infatti, benché sia oggi un cane felice e sereno, Tito ha alle spalle un passato difficile; un passato segnato dai traffico clandestino di animali. Tuttavia, a differenza di tanti altri cuccioli che spesso non sopravvivono ai viaggi lungo le tratte del commercio illegale, Tito è stato fortunato: il suo aguzzino è stato scoperto e arrestato e lui, il quattro zampe, affidato alle cure di Fiodor. Senza sapere che un giorno sarebbe stato il primo “peloso” ad accucciarsi tra i banchi di un Consiglio Comunale, vicino al proprio amico.</p>
 <br>
 <p>Fonte: http://www.enpaitalia.it/it/7911/cnt/buoni-esempi/a-nichelino-torino-il-primo-consiglio-comunale-ani.aspx</p>
 <br>
-
-
 
 <a name="29715-5"></a>
 <h2>Logica matematica in java</h2>
@@ -319,14 +109,10 @@ public class LogicaMatematica
 <p>La riga da prendere in considerazione è la 8 ma anche la 7. Il resto è standard e serve per far andare il programmino che eseguito scriverà un bel true, cioè vero. Perché? Perché l’espressioni semplici che compongono quella complessiva sulla riga 8 sono entrambe vere. Ma facciamo un passo alla volta. Sulla riga 7 abbiamo detto che “a” vale 11 e “b” 14, nella riga 8 chiediamo al calcolatore di valutare se “a” è maggiore di 10 e attraverso un operatore logico AND, che abbiamo scritto come “&&”, chiediamo se anche la seconda espressione è vera. Dato che “b” vale 14 e quindo è minore di 15 l’espressione complessiva sarà vera, quindi il true di poco sopra.</p>
 <br>
 
-
-
 <a name="29715-4"></a>
 <h2>Mappe</h2>
 <p>Esistono diversi programmi per mappare la propria mente, ma uno dei miei preferiti è FreeMind scritto in java, il mio linguaggi preferito. Creare una mappa mentale diventa utile in molte occasione, soprattutto quando si devono gestire grandi mole di dati disordinati e si vuole mettere un po’ di ordine, FreeMind permette di aggiungere annotazioni, immagini, icone, collegamenti e chi più ne ha più ne metta. Quante volte vi capita di avere un’intuizione sul vostro progetto e solo per trovare un modo per annotarlo vi perdete? Io tante! Invece apro la mia mappa salvata il giorno precedente e aggiungo la mia nuova nota! E tutto è perfettamente procedurale, algoritmico!</p>
 <br>
-
-
 
 <a name="29715-3"></a>
 <h2>Non prendersi cura del proprio animale integra il “reato di abbandono”</h2>
@@ -336,8 +122,6 @@ Inoltre, sotto il profilo soggettivo, l’imputato si era dimostrato più volte 
 <p>Fonte: http://www.enpaitalia.it/it/7855/cnt/la-legge-per-gli-animali/non-prendersi-cura-del-proprio-animale-integra-il-.aspx</p>
 <br>
 
-
-
 <a name="29715-2"></a>
 <h2>Haiku</h2>
 <p>Lago,</p>
@@ -346,8 +130,6 @@ Inoltre, sotto il profilo soggettivo, l’imputato si era dimostrato più volte 
 <br>
 <p>Fonte: http://www.icmontanelli.it/files/haiku.pdf</p>
 <br>
-
-
 
 <a name="29715-1"></a>
 <h2>Fib</h2>
@@ -360,8 +142,6 @@ Inoltre, sotto il profilo soggettivo, l’imputato si era dimostrato più volte 
 <br>
 <p>Fonte: http://www.fisicamente.net/SCI_SOC/index-1734.htm</p>
 <br>
-
-
 
 <a name="29715"></a>
 <h2>Giornata della Terra e Neil deGrasse Tyson</h2>
