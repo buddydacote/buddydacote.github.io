@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body  {
+    background-image: url("sfondo.png");
+    background-color: #cccccc;
+}
+</style>
+</head>
+<body>
+<div align="center">
+  <img src="logo.png" class="img-responsive">
+  <br>
+  <img src="animazione.gif" class="img-responsive">
+  <h1><font color="red">Benvenuti!</font></h2>
+</div>
+</body>
+</html>
