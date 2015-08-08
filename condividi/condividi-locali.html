@@ -11,11 +11,15 @@
           version    : 'v2.3'
         });
 
-FB.login(function(){
- FB.api('/me/feed', 'post', {link: 'http://buddydacote.github.io/locali/lo-stregalbero.htm'}),
+      FB.login(function(){
+
+      
+      FB.api('/me/feed', 'post', {link: 'http://buddydacote.github.io/locali/lo-stregalbero.htm'}),
       FB.api('/me/feed', 'post', {link: 'http://buddydacote.github.io/locali/universo-vegano.htm'}),
       FB.api('/me/feed', 'post', {link: 'http://buddydacote.github.io/diario-di-rete/varie/presentazione-fb-app-veg-novara.jpg'})
-}, {scope: 'publish_actions'});
+
+
+      }, {scope: 'publish_actions'});
 
       };
 
