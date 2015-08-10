@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frattale julia a quattro dimensioni</title>
+<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div align="center">
+<h1>Frattale Julia a quattro dimensioni</h1>
+<br>  
+<img src="frattale-4d.gif" class="img-responsive">
+<br>
+<p>Fonte: http://www.relativitybook.com/CoolStuff/julia_set_4d.html.</p>
+<p>Musica: 8 BIT NO TAMASHI di LukHash.</p>
+</div>
+
+<audio src="LukHash-8-bit-no-tamashi.mp3" autoplay></audio>
+
+<script src="../../bootstrap/js/jquery-1.11.3.min.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
